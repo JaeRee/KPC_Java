@@ -1,8 +1,9 @@
+package T_Collage;
 // 배열 : 같은 타입의 연속된 공간을 사용하기 위해!
 
 import java.util.Scanner;
 
-public class T11 {
+public class T_Score {
 	public static void main(String[] args) {
 		
 		

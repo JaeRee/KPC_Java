@@ -1,3 +1,4 @@
+package T_Collage;
 
 public class T2_IntergerParseInt {
 	

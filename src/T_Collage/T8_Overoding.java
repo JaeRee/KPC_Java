@@ -1,3 +1,4 @@
+package T_Collage;
 // 오버로딩 개념
 
 public class T8_Overoding {

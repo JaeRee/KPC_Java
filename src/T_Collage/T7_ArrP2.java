@@ -1,3 +1,4 @@
+package T_Collage;
 import java.util.Arrays;
 
 // arr 배열에 10, 30, 25 으로 저장되어 있고

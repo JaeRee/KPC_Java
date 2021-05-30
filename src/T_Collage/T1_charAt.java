@@ -1,3 +1,4 @@
+package T_Collage;
 import java.util.*;
 
 public class T1_charAt {
