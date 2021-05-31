@@ -4,28 +4,34 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Game2 extends JFrame {
-	private Image bufferImage;
-	private Graphics screenGraphic;
-	private Image background = new ImageIcon("images/BackG.png").getImage();
-	private Image dog = new ImageIcon("images/siba.png").getImage();
-	private Image food = new ImageIcon("images/food.png").getImage();
-	private Image icon = new ImageIcon("images/icon.png").getImage();
-	private int dogX, dogY;	// 강아지 위치
-	private int dogWidth = dog.getWidth(null);
-	private int dogHeight = dog.getHeight(null);	// 강아지 가로, 세로 크기
-	private int foodX, foodY;	// 개밥 위치
-	private int foodWidth = food.getWidth(null);
-	private int foodHeight = food.getHeight(null);	// 개밥 가로, 세로 크기
-	private int score;	// 점수
+	static Image bufferImage;
+	static Graphics screenGraphic;
+	static Image background = new ImageIcon("images/BackG.png").getImage();
+	static Image dog = new ImageIcon("images/siba.png").getImage();
+	static Image food = new ImageIcon("images/food.png").getImage();
+	static Image icon = new ImageIcon("images/icon.png").getImage();
+	static int dogX, dogY;	// 강아지 위치
+	static int dogWidth = dog.getWidth(null);
+	static int dogHeight = dog.getHeight(null);	// 강아지 가로, 세로 크기
+	static int foodX, foodY;	// 개밥 위치
+	static int foodWidth = food.getWidth(null);
+	static int foodHeight = food.getHeight(null);	// 개밥 가로, 세로 크기
+	static int score;	// 점수
 	
-	private boolean up, down, left, right;	// 키 눌림
+	public boolean up, down, left, right;	// 키 눌림
+	
+	
+
 	
 	public Game2() {
 		setTitle("강아지 산책");
 		setVisible(true);
-		setSize(1000, 700);
-		setLocationRelativeTo(null);
-		setResizable(false);
+		String currentThreadName = Thread.currentThread().getName();
+		System.out.println("["+ currentThreadName + "]" + " thread starts here...");
+		setBounds(0, 0, 1000, 700);
+		//setSize(1000, 700);
+		// setLocationRelativeTo(null);
+		// setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setIconImage(icon);
 		addKeyListener(new KeyAdapter() {
@@ -67,13 +73,17 @@ public class Game2 extends JFrame {
 		
 		while (true) {
 			try {
-				Thread.sleep(3);
+				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
+			
+			} catch(RuntimeException re) {
+				System.out.println("!!!!!!["+ currentThreadName + "]" + " Caught Exception!!!");
 			}
 			keyProcess();
 			crashCheck();
-		}
+			
+		} 
 	}
 	
 	
@@ -104,7 +114,7 @@ public class Game2 extends JFrame {
 		}
 	}	// 강아지와 개밥 충돌 체크
 	
-
+	
 	public void paint(Graphics g) {
 		bufferImage = createImage(1000, 700);
 		screenGraphic = bufferImage.getGraphics();
@@ -122,8 +132,11 @@ public class Game2 extends JFrame {
 		this.repaint();
 	}
 	
-	public static void main(String[] args) {
-		new Game2();
-	}
+
+	
+	
+
+
+
 
 }

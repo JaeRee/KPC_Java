@@ -138,14 +138,21 @@ public class PetCefe extends Frame {
 		MenuItem mEvent4_1 = new MenuItem("강아지 산책게임");
 		mEvent4_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new Game2(); 
+				Thread t = new Thread(new Runnable() {
+
+					@Override
+					public void run() {
+						new Game2();
+						
+					}
+					
+				});
+				t.start();
+				
 			}
 		});
 		
 		mEvent4.add(mEvent4_1);
-		
-		
-		
 		
 		
 		
@@ -164,7 +171,7 @@ public class PetCefe extends Frame {
 		
 
 		
-		/*********** 메뉴바 mb에 메뉴 붙이는 부분 *************/
+		/************************************* 메뉴바 붙이기 **********************************************/
 		mb.add(mFile);
 		mb.add(mEvent1);
 		mb.add(mEvent2);
@@ -173,10 +180,9 @@ public class PetCefe extends Frame {
 		mb.add(mHelp);
 		
 		
-		/*********** 메인 라벨 *************/
 
-		/*********** 프레임에 컨포넌트 붙이는 부분 *************/
-		setMenuBar(mb); // 프레임에 메뉴바 붙이기
+		/************************************* 프레임에  **********************************************/
+		setMenuBar(mb); 
 		
 		setVisible(true);	
 	}
