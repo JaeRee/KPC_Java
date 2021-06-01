@@ -6,7 +6,7 @@ import javax.swing.*;
 public class Game2 extends JFrame {
 	static Image bufferImage;
 	static Graphics screenGraphic;
-	static Image background = new ImageIcon("images/BackG.png").getImage();
+	static Image background = new ImageIcon("images/BG2.jpg").getImage();
 	static Image dog = new ImageIcon("images/siba.png").getImage();
 	static Image food = new ImageIcon("images/food.png").getImage();
 	static Image icon = new ImageIcon("images/icon.png").getImage();

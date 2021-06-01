@@ -154,6 +154,8 @@ public class PetCefe extends Frame {
 		
 		mEvent4.add(mEvent4_1);
 		
+		// (에러) Exception in thread "AWT-EventQueue-0"
+		// https://almost-native.tistory.com/297        쓰레드 오류해결
 		
 		
 		
